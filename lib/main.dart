@@ -4,6 +4,7 @@ import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutterpractics/DialogLogout.dart';
 
 import 'ExpandableWeget.dart';
 import 'MyCustomDialog.dart';
@@ -215,60 +216,32 @@ class _MyHomePageState extends State<MyHomePage> {
                         side: BorderSide(color: Colors.deepPurpleAccent)),
                     onPressed: () {
                       showMyCustomDialog(context);
-                      @override
-                      Widget build(BuildContext context) {
-                        return Dialog(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: Container(
-                            height: 300,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                FlutterLogo(size: 150,),
-                                Text("This is a Custom Dialog",style:TextStyle(fontSize: 20),),
-                                ElevatedButton(
 
-                                    onPressed: (){
-                                      Navigator.of(context).pop();
-                                    }, child: Text("Close"))
-                              ],
-                            ),
-                          ),
-                        );
-                      }
-
-
-
-
-                      // Dialog(
-                      //   shape: RoundedRectangleBorder(
-                      //       borderRadius:BorderRadius.circular(30.0)),
-                      //   child: Container(
-                      //     height: 300,
-                      //     child: Column(
-                      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //       children: [
-                      //         FlutterLogo(size: 150,),
-                      //         Text("This is a Custom Dialog",style:TextStyle(fontSize: 20),),
-                      //         ElevatedButton(
-                      //
-                      //             onPressed: (){
-                      //               Navigator.of(context).pop();
-                      //             }, child: Text("Close"))
-                      //       ],
-                      //     ),
-                      //   ),
-                      // );
                     },
                       child: const Text(
-                        "TAP TO CHECKOUT !!",
+                        "congress!!",
                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                       )
                   ),
                 ),
+              ),
+              Container(
+
+                child: MaterialButton(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(color: Colors.deepPurpleAccent)),
+                    onPressed: () {
+                      showLogoutDialog(context);
+
+                    },
+                    child: const Text(
+                      "logout !!",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    )
+                ),
               )
+
 
 
 
@@ -378,49 +351,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         ),
                                       ),
                                     ),
-                                    // Image.asset(
-                                    //   "assets/images/ic_cross.png",
-                                    //   height: 60,
-                                    //   width: 60,
-                                    // ),
 
-
-                                    // Container(
-                                    //     alignment: Alignment.center,
-                                    //     height: 100,
-                                    //     width: 100,
-                                    //     child:
-                                    //         Image.asset('assets/images/ic_male.png')),
-                                    // Expanded(
-                                    //   child: Column(
-                                    //     children: [
-                                    //       Text(
-                                    //         "Fatha Al Shams",
-                                    //         style: TextStyle(
-                                    //             fontSize: 25,
-                                    //             fontWeight: FontWeight.w600),
-                                    //       ),
-                                    //       Text(
-                                    //         "85% Profile Complete",
-                                    //         style: TextStyle(fontSize: 18),
-                                    //       ),
-                                    //       LinearProgressIndicator(
-                                    //         value: _start,
-                                    //         minHeight: 15.0,
-                                    //         backgroundColor: Colors.green,
-                                    //         valueColor:
-                                    //             AlwaysStoppedAnimation(Colors.black),
-                                    //       ),
-                                    //     ],
-                                    //   ),
-                                    // ),
-                                    // Container(
-                                    //   child: Image.asset(
-                                    //     "assets/images/ic_cross.png",
-                                    //     height: 60,
-                                    //     width: 60,
-                                    //   ),
-                                    // ),
                                   ],
                                 ),
                                 Card(
@@ -722,6 +653,15 @@ void showMyCustomDialog(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return MyCustomDialog();
+    },
+  );
+}
+
+void showLogoutDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return DialogLogout();
     },
   );
 }

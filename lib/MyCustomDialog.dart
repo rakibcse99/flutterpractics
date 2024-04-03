@@ -6,8 +6,7 @@ class MyCustomDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
-      ),
+          borderRadius: BorderRadius.all(Radius.circular(32.0))),
       child: Container(
         height: 300,
         child: Column(
