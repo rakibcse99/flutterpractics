@@ -4,7 +4,9 @@ import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutterpractics/DialogDeleteAccount.dart';
 import 'package:flutterpractics/DialogLogout.dart';
+import 'package:flutterpractics/DialogRecommendation.dart';
 
 import 'ExpandableWeget.dart';
 import 'MyCustomDialog.dart';
@@ -206,46 +208,69 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Stack(
-            children: [
-              Container(
-                child: Center(
-                  child: MaterialButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(color: Colors.deepPurpleAccent)),
-                    onPressed: () {
-                      showMyCustomDialog(context);
+          Container(
+            child: Center(
+              child: MaterialButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(color: Colors.deepPurpleAccent)),
+                onPressed: () {
+                  showMyCustomDialog(context);
 
-                    },
-                      child: const Text(
-                        "congress!!",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                  ),
-                ),
+                },
+                  child: const Text(
+                    "congress!!",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  )
               ),
-              Container(
+            ),
+          ),
+          Container(
 
-                child: MaterialButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(color: Colors.deepPurpleAccent)),
-                    onPressed: () {
-                      showLogoutDialog(context);
+            child: MaterialButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(color: Colors.deepPurpleAccent)),
+                onPressed: () {
+                  showLogoutDialog(context);
 
-                    },
-                    child: const Text(
-                      "logout !!",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    )
-                ),
-              )
+                },
+                child: const Text(
+                  "logout",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )
+            ),
+          ),
+          Container(
 
+            child: MaterialButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(color: Colors.deepPurpleAccent)),
+                onPressed: () {
+                  showDeleteAccount(context);
 
+                },
+                child: const Text(
+                  "delete !!",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )
+            ),
+          ),
+          Container(
+            child: MaterialButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(color: Colors.deepPurpleAccent)),
+                onPressed: () {
+                  showDeleteAccount(context);
 
-
-            ],
+                },
+                child: const Text(
+                  "Recommendation",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )
+            ),
           ),
 
           Container(
@@ -662,6 +687,24 @@ void showLogoutDialog(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return DialogLogout();
+    },
+  );
+}
+
+
+void showDeleteAccount(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return DialogDeleteAccount();
+    }, 
+  );
+}
+void showRecommendation(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return DialogRecommendation();
     },
   );
 }

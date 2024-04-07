@@ -2,32 +2,32 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class DialogLogout extends StatelessWidget {
+class DialogDeleteAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
       child: Container(
-        height: 150,
+        height: 250,
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               margin: EdgeInsets.only(top: 10),
-              height: 70,
+              height: 170,
               child: Center(
                 child: Column(
                   children: [
                     Text(
-                      'Are you sure you want to ',
+                      'Delete your account? ',
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                      TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      'logout?',
+                      'This action is permanent and will result \n in the deletion of all your data on our\n platform, including your profile. If you\n log back in within 30 days, you will be\n able to reactivate your account. After\n 30 days, this cannot be undone.',
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                      TextStyle(fontSize: 14,),textAlign: TextAlign.center
                     ),
                   ],
                 ),
@@ -67,7 +67,7 @@ class DialogLogout extends StatelessWidget {
                           flex: 1,
                           child: Container(
                             alignment: Alignment.center,
-                            child: Text('logout? ',
+                            child: Text('Delete ',
                                 style: TextStyle(
                                     fontSize: 15, fontWeight: FontWeight.w600)),
                           ))
