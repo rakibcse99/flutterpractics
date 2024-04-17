@@ -7,6 +7,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutterpractics/DialogDeleteAccount.dart';
 import 'package:flutterpractics/DialogLogout.dart';
 import 'package:flutterpractics/DialogRecommendation.dart';
+import 'package:flutterpractics/SearchCustomDialog.dart';
 
 import 'ExpandableWeget.dart';
 import 'MyCustomDialog.dart';
@@ -263,11 +264,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     borderRadius: BorderRadius.circular(20),
                     side: BorderSide(color: Colors.deepPurpleAccent)),
                 onPressed: () {
-                  showDeleteAccount(context);
+                  showSearch(context);
 
                 },
                 child: const Text(
-                  "Recommendation",
+                  "search",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 )
             ),
@@ -705,6 +706,16 @@ void showRecommendation(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return DialogRecommendation();
+    },
+  );
+}
+
+
+void showSearch(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return SearchCustomDialog();
     },
   );
 }
